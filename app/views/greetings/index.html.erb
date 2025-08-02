@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Greetings" %>
+
+<h1>あいさつを投稿しよう</h1>
+<p>現在のあいさつ数は <%= @greetings.count %> 件です。</p>
+<div id="greetings">
+  <% @greetings.each do |greeting| %>
+    <%= render greeting %>
+    <p>
+      <%= link_to "表示", greeting %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "新規あいさつを作成", new_greeting_path %>
